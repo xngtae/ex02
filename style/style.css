@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "KoddiUD OnGothic";
+  src: url("/font/KoddiUDOnGothic-Regular.woff2") format(woff2), url("/font/KoddiUDOnGothic-Regular.woff") format(woff);
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  box-sizing: border-box;
+  font-family: "KoddiUD OnGothic", "Noto Sans", "Noto Sans CJK", "Pretendard", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --background: #000;
+  --color: #fff;
+  --primary: #00ff47;
+}
+
+body {
+  background: var(--background);
+  color: var(--color);
+  line-height: 1.55em;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.background, .ruler {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.ruler {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 calc(0.75rem* 2);
+}
+.ruler span {
+  width: 1px;
+  height: 0.5rem;
+  background: var(--color);
+}
+.ruler.ruler-bottom {
+  top: unset;
+  bottom: 0;
+}
+
+.logo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: calc(0.75rem* 2);
+}
+.logo div {
+  height: calc((100vw - 0.75rem* 4) * 0.0618);
+}
+.logo div svg {
+  width: 100%;
+  height: 100%;
+}
+.logo div svg path {
+  fill: var(--color);
+}
+
+.link-tree {
+  font-size: calc(1rem + 0.7vw);
+  height: 100%;
+  line-height: 1.55em;
+  counter-reset: linkTree;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link-tree li {
+  border: 2px solid var(--color);
+  border-radius: 100px;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link-tree li::before {
+  counter-increment: linkTree;
+  content: counter(linkTree);
+  margin-right: 0.5rem;
+}
+
+li:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  border-bottom: 6px solid var(--primary);
+}
+
+.drawing {
+  width: 100%;
+  mix-blend-mode: difference;
+}
+.drawing svg {
+  width: 100%;
+  height: 100%;
+}
+.drawing svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dashani 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes dashani {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
